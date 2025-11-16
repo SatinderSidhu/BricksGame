@@ -214,3 +214,61 @@ button:active {
 .controls p {
     margin: 5px 0;
 }
+
+/* Show/hide controls based on device */
+.mobile-controls {
+    display: none;
+}
+
+.desktop-controls {
+    display: block;
+}
+
+/* Mobile-specific styles */
+@media (max-width: 768px) {
+    .mobile-controls {
+        display: block;
+    }
+
+    .desktop-controls {
+        display: none;
+    }
+
+    .name-container {
+        max-width: 90%;
+        padding: 30px 20px;
+    }
+
+    .name-container h1 {
+        font-size: 36px;
+    }
+
+    #gameCanvas {
+        max-width: 100%;
+        height: auto;
+    }
+
+    #gameScreen {
+        padding: 10px;
+    }
+
+    .game-info {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .info-item {
+        min-width: 45%;
+    }
+}
+
+@media (hover: none) and (pointer: coarse) {
+    /* Touch device detected */
+    .mobile-controls {
+        display: block;
+    }
+
+    .desktop-controls {
+        display: none;
+    }
+}

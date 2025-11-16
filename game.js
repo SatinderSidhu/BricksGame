@@ -469,9 +469,61 @@ function keyUp(e) {
     }
 }
 
+// Touch event handlers for mobile
+let touchX = 0;
+let isTouching = false;
+
+function handleTouchStart(e) {
+    if (gameState !== 'playing') return;
+
+    e.preventDefault();
+    const touch = e.touches[0];
+    const rect = canvas.getBoundingClientRect();
+    touchX = touch.clientX - rect.left;
+    isTouching = true;
+
+    // Launch ball on tap
+    if (!ball.launched) {
+        launchBall();
+    }
+}
+
+function handleTouchMove(e) {
+    if (gameState !== 'playing') return;
+    if (!isTouching) return;
+
+    e.preventDefault();
+    const touch = e.touches[0];
+    const rect = canvas.getBoundingClientRect();
+    touchX = touch.clientX - rect.left;
+
+    // Move paddle to touch position (centered on touch)
+    paddle.x = touchX - paddle.width / 2;
+
+    // Keep paddle within bounds
+    if (paddle.x < 0) {
+        paddle.x = 0;
+    }
+    if (paddle.x + paddle.width > canvas.width) {
+        paddle.x = canvas.width - paddle.width;
+    }
+}
+
+function handleTouchEnd(e) {
+    e.preventDefault();
+    isTouching = false;
+    paddle.dx = 0;
+}
+
 // Event listeners
 document.addEventListener('keydown', keyDown);
 document.addEventListener('keyup', keyUp);
+
+// Add touch event listeners for mobile support
+canvas.addEventListener('touchstart', handleTouchStart, { passive: false });
+canvas.addEventListener('touchmove', handleTouchMove, { passive: false });
+canvas.addEventListener('touchend', handleTouchEnd, { passive: false });
+canvas.addEventListener('touchcancel', handleTouchEnd, { passive: false });
 
 // Start button
 document.getElementById('startBtn').addEventListener('click', () => {
