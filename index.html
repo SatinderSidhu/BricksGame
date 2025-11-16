@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brick Breaker Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="nameScreen" class="screen">
+        <div class="name-container">
+            <h1>Brick Breaker</h1>
+            <p>Enter your name to start playing</p>
+            <input type="text" id="playerName" placeholder="Your Name" maxlength="20">
+
+            <div class="upload-section">
+                <p class="upload-label">Want to personalize your game?</p>
+                <label for="backgroundUpload" class="upload-btn">
+                    <span id="uploadText">Upload Background Image (Optional)</span>
+                    <input type="file" id="backgroundUpload" accept="image/*">
+                </label>
+                <div id="imagePreview" class="hidden">
+                    <img id="previewImg" src="" alt="Preview">
+                    <button id="removeImage" type="button">Remove Image</button>
+                </div>
+            </div>
+
+            <button id="startBtn">Start Game</button>
+        </div>
+    </div>
+
+    <div id="gameScreen" class="screen hidden">
+        <div class="game-info">
+            <div class="info-item">
+                <span class="label">Player:</span>
+                <span id="displayName">-</span>
+            </div>
+            <div class="info-item">
+                <span class="label">Level:</span>
+                <span id="levelDisplay">1</span>
+            </div>
+            <div class="info-item">
+                <span class="label">Score:</span>
+                <span id="scoreDisplay">0</span>
+            </div>
+            <div class="info-item">
+                <span class="label">Lives:</span>
+                <span id="livesDisplay">3</span>
+            </div>
+        </div>
+        <canvas id="gameCanvas" width="800" height="600"></canvas>
+        <div id="messageBox" class="hidden">
+            <p id="messageText"></p>
+            <button id="continueBtn" class="hidden">Continue</button>
+            <button id="restartBtn" class="hidden">Restart Game</button>
+        </div>
+        <div class="controls">
+            <p>Use Arrow Keys or A/D to move the paddle</p>
+            <p>Press SPACE to launch the ball</p>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>

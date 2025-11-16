@@ -1,0 +1,216 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.screen {
+    text-align: center;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Name Screen Styles */
+.name-container {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    max-width: 400px;
+}
+
+.name-container h1 {
+    color: #667eea;
+    font-size: 48px;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.name-container p {
+    color: #666;
+    margin-bottom: 30px;
+    font-size: 18px;
+}
+
+#playerName {
+    width: 100%;
+    padding: 15px;
+    font-size: 18px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    transition: border-color 0.3s;
+}
+
+#playerName:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+/* Upload Section Styles */
+.upload-section {
+    margin: 20px 0;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 10px;
+}
+
+.upload-label {
+    color: #667eea;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.upload-btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    font-size: 14px;
+}
+
+.upload-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+}
+
+.upload-btn input[type="file"] {
+    display: none;
+}
+
+#imagePreview {
+    margin-top: 15px;
+    padding: 10px;
+    background: white;
+    border-radius: 10px;
+}
+
+#previewImg {
+    max-width: 100%;
+    max-height: 150px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#removeImage {
+    background: #dc3545;
+    padding: 8px 20px;
+    font-size: 14px;
+}
+
+#removeImage:hover {
+    background: #c82333;
+    transform: translateY(-2px);
+}
+
+button {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    font-size: 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+/* Game Screen Styles */
+#gameScreen {
+    background: white;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.game-info {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.info-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.label {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.info-item span:last-child {
+    font-size: 24px;
+    font-weight: bold;
+    color: #667eea;
+}
+
+#gameCanvas {
+    border: 3px solid #667eea;
+    border-radius: 10px;
+    display: block;
+    background: #000;
+}
+
+#messageBox {
+    margin-top: 20px;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 10px;
+}
+
+#messageText {
+    font-size: 24px;
+    font-weight: bold;
+    color: #667eea;
+    margin-bottom: 15px;
+}
+
+#messageBox button {
+    margin: 0 10px;
+}
+
+.controls {
+    margin-top: 15px;
+    color: #666;
+    font-size: 14px;
+}
+
+.controls p {
+    margin: 5px 0;
+}
